@@ -1,0 +1,79 @@
+{
+  "name": "next-timeago-af",
+  "version": "0.1.0",
+  "description": "Next.js + TypeScript-friendly timeago with Jalali/Gregorian calendar support and Afghan-friendly locales (fa-AF, ps).",
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azizullahaziz/next-timeago-af.git"
+  },
+  "homepage": "https://github.com/azizullahaziz/next-timeago-af#readme",
+  "bugs": {
+    "url": "https://github.com/azizullahaziz/next-timeago-af/issues"
+  },
+  "keywords": [
+    "timeago",
+    "nextjs",
+    "react",
+    "typescript",
+    "jalali",
+    "gregorian",
+    "persian",
+    "dari",
+    "pashto"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js",
+      "require": "./dist/react.cjs"
+    },
+    "./react/TimeAgo": {
+      "types": "./dist/react-TimeAgo.d.ts",
+      "import": "./dist/react-TimeAgo.js",
+      "require": "./dist/react-TimeAgo.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "typecheck:test": "tsc -p tsconfig.test.json --noEmit",
+    "prepublishOnly": "pnpm test && pnpm build"
+  },
+  "dependencies": {
+    "jalaali-js": "^1.2.6"
+  },
+  "peerDependencies": {
+    "next": ">=13",
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.3",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.5"
+  }
+}
